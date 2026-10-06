@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Network Load Balancer Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Network Load Balancer Simulator</h1>
+
+    <div class="controls">
+
+        <select id="algorithm">
+            <option value="round">Round Robin</option>
+            <option value="least">Least Connections</option>
+            <option value="weighted">Weighted Round Robin</option>
+            <option value="random">Random</option>
+        </select>
+
+        <button onclick="sendRequest()">Send Request</button>
+
+        <button onclick="comparisonMode()">Comparison Mode</button>
+
+    </div>
+
+    <h2>Servers</h2>
+
+    <div id="servers" class="server-container"></div>
+
+    <h2>Request Activity</h2>
+
+    <div id="activity" class="activity"></div>
+
+    <h2>Metrics</h2>
+
+    <div id="metrics" class="metrics"></div>
+
+    <h2>Comparison</h2>
+
+    <div id="comparison"></div>
+
+</div>
+
+<script src="code.js"></script>
+
+</body>
+</html>
