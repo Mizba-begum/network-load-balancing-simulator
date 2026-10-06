@@ -1,0 +1,175 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f2f4f7;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.controls {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+select,
+button {
+    padding: 10px;
+    margin: 5px;
+}
+
+select {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Send Request button */
+button[onclick="sendRequest()"] {
+    background: #4a6cf7;
+    color: white;
+}
+
+/* Comparison Mode button */
+button[onclick="comparisonMode()"] {
+    background: #555;
+    color: white;
+}
+
+/* Server container */
+.server-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Server card */
+.server {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Server status */
+.alive {
+    color: green;
+}
+
+.dead {
+    color: red;
+}
+
+.recovering {
+    color: orange;
+}
+
+/* Fail button */
+button[onclick^="failServer"] {
+    background: red;
+    color: white;
+}
+
+/* Recover button */
+button[onclick^="recoverServer"] {
+    background: green;
+    color: white;
+}
+
+/* Activity, Metrics and Comparison */
+.activity,
+.metrics,
+#comparison {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* Activity */
+.activity p {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* Metrics cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.cards div {
+    background: #f2f4f7;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    color: #555;
+}
+
+.cards b {
+    display: block;
+    font-size: 24px;
+    color: #222;
+}
+
+/* Load bar */
+.bar {
+    background: #e3e6ea;
+    border-radius: 5px;
+    height: 12px;
+    overflow: hidden;
+}
+
+.bar div {
+    background: #4a6cf7;
+    height: 100%;
+    transition: width 0.3s;
+}
+
+/* Comparison table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Best algorithm row only */
+tr.best {
+    background: #e6f7e9;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .server-container {
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
